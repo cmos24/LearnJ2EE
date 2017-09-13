@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"">
+
+<!-- 首先准备上传页面 upload.html
+上传页面有两点需要注意
+1. form 的method必须是post的，get不能上传文件。 还需要加上enctype="multipart/form-data" 表示提交的数据是二进制文件
+ 
+<form action="uploadPhoto" method="post" enctype="multipart/form-data">
+ 
+2. 需要提供type="file" 的字段进行上传 -->
+
+<form action="uploadPhoto" method="post" enctype="multipart/form-data">
+	游戏名称:<input type="text" name="heroName"/><br>
+	上传头像:<input type="file" name="filepath"/><br>
+	<input type="submit" value="上传">
+</form>
