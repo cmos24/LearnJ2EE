@@ -5,5 +5,7 @@
 	<classpathentry kind="lib" path="F:/tomcat-8.0.38/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="E:/code/GitHub/LearnJ2EE/j2ee/web/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
 	<classpathentry kind="lib" path="E:/code/GitHub/LearnJ2EE/j2ee/web/WEB-INF/lib/commons-io-1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="web/WEB-INF/classes"/>
 </classpath>

@@ -33,7 +33,7 @@
 
 	<servlet>
 		<servlet-name>UploadPhotoServlet</servlet-name>
-		<servlet-class>UploadPhotoServlet</servlet-class>
+		<servlet-class>UploadPhotoServlet2</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

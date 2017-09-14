@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 点击提交之后，把form中的数据取出来，组织成json的格式，用ajax发送出去。
+这里用的ajax方式是 jquery的post函数, 请参考：使用post方式提交ajax
+
+JSON.stringify函数的作用是将一个javascript对象，转换为JSON格式的字符串。
+
+提交之后，将会看到如图所示的对话框
+
+这里还用到了jquery.min.js -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+<title>用Ajax以JSON方式提交数据</title>
+<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<form>
+		名称：<input type="text" id="name"/><br/>
+		血量：<input type="text" id="hp"/><br/>
+		<input type="button" value="提交" id="sender"	>
+	</form>
+	<div id="messageDiv"></div>
+	
+	<script>
+		$("#sender").click(function(){
+			var name=$("#name").val();
+			var hp=$("#hp").val();
+			console.log(name);
+			console.log(hp);
+			var hero={"name":name,"hp":hp};
+			var url="submitServlet";
+			
+			$.post(//JSON.stringify函数的作用是将一个javascript对象，转换为JSON格式的字符串。
+					url,
+					{"data":JSON.stringify(hero)},
+					function(data){
+						alert("提交成功，请在Tomcat控制台查看服务端接收到的数据");
+					}
+			);
+		});	
+	</script>
+
+</body>
+</html>

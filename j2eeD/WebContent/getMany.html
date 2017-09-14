@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>用AJAX以JSON方式获取多个数据</title>
+<script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+	<input type="button" value="通过AJAX获取多个Hero对象" id="sender">   
+   
+    <div id="messageDiv"></div>
+    
+    <script>
+   /*  1. 通过ajax访问getManyServlet
+    2. 把返回的数据，通过 $.parseJSON 转换为json数组
+    3. 遍历数组，显示在div中 */
+
+    	$("#sender").click(function(){
+    		var url="getManyServlet";
+    		$.post(
+    				url,
+    				function(data){
+    					var heros=$.parseJSON(data);
+    					for(i in heros){
+    						var old=$("#messageDiv").html();
+    						var hero=heros[i];
+    						$("#messageDiv").html(old + "<br>"+hero.name+"   -----   "+hero.hp);
+    					}
+    				}
+    		);
+    	});
+    </script>
+
+</body>
+</html>
