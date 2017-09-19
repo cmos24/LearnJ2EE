@@ -16,6 +16,13 @@ public class HeroListServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
+		
+		String userName=(String)request.getSession().getAttribute("userName");
+		if(null==userName){
+			response.sendRedirect("login.html");
+			return;//如果userName为空，不执行下面的跳转
+		}
+		
 		int start = 0;
 		int count = 5;
 
