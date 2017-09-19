@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app>
-    <servlet>
-        <servlet-name>HeroListServlet</servlet-name>
-        <servlet-class>servlet.HeroListServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HeroListServlet</servlet-name>
-        <url-pattern>/listHero</url-pattern>
-    </servlet-mapping>
-       
-    <servlet>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>HeroListServlet</servlet-name>
+    <servlet-class>servlet.HeroListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HeroListServlet</servlet-name>
+    <url-pattern>/listHero</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>HeroDeleteServlet</servlet-name>
     <servlet-class>servlet.HeroDeleteServlet</servlet-class>
   </servlet>
@@ -17,7 +16,6 @@
     <servlet-name>HeroDeleteServlet</servlet-name>
     <url-pattern>/deleteHero</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>HeroEditServlet</servlet-name>
     <servlet-class>servlet.HeroEditServlet</servlet-class>
@@ -26,8 +24,7 @@
     <servlet-name>HeroEditServlet</servlet-name>
     <url-pattern>/editHero</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>HeroUpdateServlet</servlet-name>
     <servlet-class>servlet.HeroUpdateServlet</servlet-class>
   </servlet>
@@ -35,4 +32,51 @@
     <servlet-name>HeroUpdateServlet</servlet-name>
     <url-pattern>/updateHero</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HeroAddServlet</servlet-name>
+    <servlet-class>servlet.HeroAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HeroAddServlet</servlet-name>
+    <url-pattern>/addHero</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <filter>
+    <filter-name>FirstFilter</filter-name>
+    <filter-class>filter.FirstFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FirstFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>filter.AuthFilter</filter-class>
+</filter>
+ 
+<filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
 </web-app>

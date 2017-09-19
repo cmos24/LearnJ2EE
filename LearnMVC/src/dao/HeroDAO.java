@@ -37,7 +37,7 @@ public class HeroDAO {
                 total = rs.getInt(1);
             }
    
-            System.out.println("total:" + total);
+            //System.out.println("total:" + total);
    
         } catch (SQLException e) {
    
